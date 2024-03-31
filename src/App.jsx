@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import estilos from "./css/App.module.css";
+import { Inicio } from "./componentes/Inicio.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <h1>Music Blend</h1>
-    </>
-  )
-}
+    <div className={estilos.contenedor}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 
-export default App
+export default App;
