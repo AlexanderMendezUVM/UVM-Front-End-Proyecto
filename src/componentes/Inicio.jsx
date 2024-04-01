@@ -1,8 +1,12 @@
 import estilos from "../css/Inicio.module.css";
 import Logop from "../assets/Logop.png";
 import Logogc from "../assets/Logo Grande Claro.png";
-import Album from "../assets/Album de Muestra.png";
+import Album from "../assets/Lorde_Pure_Heroine.png";
+import Nav0 from "../assets/Nav0.png";
+import Nav1 from "../assets/Nav1.png";
+import Nav2 from "../assets/Nav2.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Inicio = () => {
   const [token, setToken] = useState('');
@@ -44,7 +48,28 @@ export const Inicio = () => {
               <h2 className={estilos.comienza}>¡COMIENZA YA!</h2>
           </div>
           <div className={estilos.derecha}>
-            <img className={estilos.albumimg} src={Album} alt="" />
+            <img className={estilos.albumimg} src={Album} alt=""/>
+            <div className={estilos.contenedorinfo}>
+                <div className={estilos.info}>
+                    <img className={estilos.imginfo} src={Nav0} alt="" />
+                    <p className={estilos.mensajeinfo}>
+                        Buscar información completa acerca de tus artistas favoritos
+                    </p>
+                </div>
+                <div className={estilos.info}>
+                    <img className={estilos.imginfo} src={Nav1} alt="" />
+                    <p className={estilos.mensajeinfo}>
+                        Mantenerte actualizado con los últimos lanzamientos
+                    </p>
+                </div>
+                <div className={estilos.info}>
+                    <img className={estilos.imginfo} src={Nav2} alt="" />
+                    <p className={estilos.mensajeinfo}>
+                        Encuentra el album que buscas con todos sus detalles
+                    </p>
+                </div>
+            </div>
+
           </div>
       </div>
       <div className={estilos.footer}>
