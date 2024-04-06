@@ -123,7 +123,9 @@ export const Inicio = () => {
             <h3>Hola amante de la música, esto es MusicBlend</h3>
             <p>Nosotros te presentamos toda la música que te gusta en un solo lugar; revisa tus recomendaciones y empieza a descubrir. Cuanta más música busques, mejores recomendaciones obtendrás.</p>
             <h3>¿QUÉ ESPERAS?</h3>
-              <h2 className={estilos.comienza}>¡COMIENZA YA!</h2> 
+            <Link to="/Login">
+              <h2 className={estilos.comienza}>¡COMIENZA YA!</h2>
+            </Link> 
           </div>
           {exist && (
           <div className={estilos.derecha}>

@@ -1,0 +1,35 @@
+.logincontenedor{
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acceso{
+    color: black;
+    font-size: 3rem;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    gap: 40px;
+    background-color: E2E3E5;
+    color: #01B23E;
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+.boton{
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: #01B23E;
+    border: 0;
+    border-style: none;
+}
