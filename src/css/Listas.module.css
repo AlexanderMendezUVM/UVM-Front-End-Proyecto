@@ -1,0 +1,75 @@
+.contenedor{
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    background-color: black;
+}
+
+.frase{
+    font-size: 0.9rem;
+    padding-top: 170px;
+    color:red;
+}
+
+.listado{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 680px);
+    gap: 20px;
+    padding: 60px;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #000000;
+    background-color: #E2E3E5;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #D3D5D8;
+    /* box-shadow: 3px 3px 8px rgb(238, 238, 238); */
+    box-shadow: 3px 3px 8px rgb(44, 44, 44);
+}
+
+.tarjeta:hover{
+    scale: 1.02;
+    transition: all 0.5s ease-in-out;
+}
+
+.infotarjeta{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    text-align: left;
+}
+
+
+.imgagen{
+    border-radius: 10px;
+}
+
+.nombre{
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.play{
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: #01B23E;
+    text-align: center;
+    line-height: 60px;
+    color:white;
+}

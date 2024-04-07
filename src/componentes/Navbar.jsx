@@ -14,7 +14,7 @@ export const Navbar=()=> {
       </Link>
         <ul className={estilos.menu}>
         <Link to="/Explorar"><li className={estilos.itemmenu}>Explorar</li></Link>
-            <li className={estilos.itemmenu}>Listas</li>
+        <Link to="/Listas"><li className={estilos.itemmenu}>Listas</li></Link> 
             <li className={estilos.itemmenu}>Top Artista</li>
             <li className={estilos.itemmenu}>Sobre Nosotros</li>
         </ul>
