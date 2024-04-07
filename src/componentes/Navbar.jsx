@@ -13,7 +13,7 @@ export const Navbar=()=> {
         </div>
       </Link>
         <ul className={estilos.menu}>
-            <li className={estilos.itemmenu}>Explorar</li>
+        <Link to="/Explorar"><li className={estilos.itemmenu}>Explorar</li></Link>
             <li className={estilos.itemmenu}>Listas</li>
             <li className={estilos.itemmenu}>Top Artista</li>
             <li className={estilos.itemmenu}>Sobre Nosotros</li>
