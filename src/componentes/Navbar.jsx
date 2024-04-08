@@ -21,7 +21,9 @@ export const Navbar=()=> {
         <button className={estilos.iconomenu}>
               <img className={estilos.iconoimg} src={Iconmenu} alt=""/>
         </button>
-        <div className={estilos.registro}>Registrate</div>
+        <Link to="/Contacto">
+          <div className={estilos.registro}>Cantactanos</div>
+        </Link>
         <img className={estilos.modoimg} src={Dark} alt="" />
     </header>
   );
