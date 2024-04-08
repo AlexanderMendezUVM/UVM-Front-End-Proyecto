@@ -6,6 +6,7 @@ import { Navbar } from "./componentes/Navbar.jsx";
 import { Login } from "./paginas/Login.jsx";
 import { Explorar } from "./componentes/Explorar.jsx";
 import { Listas } from "./componentes/Listas.jsx";
+import { Nosotros} from "./componentes/Nosotros.jsx";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/Explorar" element={<Explorar />} /> 
           <Route path="/TopMusic" element={<TopMusic />} /> 
           <Route path="/Listas" element={<Listas />} /> 
+          <Route path="/Nosotros" element={<Nosotros />} /> 
         </Routes>
       </BrowserRouter>
     </div>

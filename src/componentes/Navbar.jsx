@@ -15,8 +15,8 @@ export const Navbar=()=> {
         <ul className={estilos.menu}>
         <Link to="/Explorar"><li className={estilos.itemmenu}>Explorar</li></Link>
         <Link to="/Listas"><li className={estilos.itemmenu}>Listas</li></Link> 
-            <li className={estilos.itemmenu}>Top Artista</li>
-            <li className={estilos.itemmenu}>Sobre Nosotros</li>
+        <Link to="/TopMusic"><li className={estilos.itemmenu}>Top Artista</li></Link>
+        <Link to="/Nosotros"><li className={estilos.itemmenu}>Sobre Nosotros</li></Link>
         </ul>
         <button className={estilos.iconomenu}>
               <img className={estilos.iconoimg} src={Iconmenu} alt=""/>
