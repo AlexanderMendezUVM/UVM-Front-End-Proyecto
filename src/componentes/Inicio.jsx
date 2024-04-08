@@ -1,6 +1,7 @@
 import estilos from "../css/Inicio.module.css";
 import Logop from "../assets/Logop.png";
 import Logogc from "../assets/Logo Grande Claro.png";
+import Logogo from "../assets/Logo Grande Oscuro.png";
 import Nav0 from "../assets/Nav0.png";
 import Nav1 from "../assets/Nav1.png";
 import Nav2 from "../assets/Nav2.png";
@@ -30,7 +31,7 @@ const idAlbunes = [
 
 
 
-export const Inicio = () => {
+export const Inicio = ({dark}) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const [playBoop, {pause}] = useSound(audio, {
@@ -67,17 +68,17 @@ export const Inicio = () => {
   }
 
   useEffect(()=>{
-    setToken(localStorage.getItem('token'));
-  },[token]);
-
-
-  useEffect(()=>{
     if (window.location.hash){
       const hash = window.location.hash;
       const tokens = getParamsHash(hash);
       localStorage.setItem('token',tokens.access_token);
       setToken(tokens.access_token);
     }
+  },[]);
+
+  useEffect(()=>{
+    setToken(localStorage.getItem('token'));
+    console.log("TOKEN ALMACENADO EN LOCAL STORAGE:",localStorage.getItem('token'));
   },[]);
 
   async function generarToken(){
@@ -100,7 +101,7 @@ export const Inicio = () => {
         Authorization: "Bearer " + localStorage.getItem('tokenc')
       },
     };
-    console.log("TOKEN RECIBIDO: ",localStorage.getItem('tokenc'));
+    console.log("TOKEN_C RECIBIDO: ",localStorage.getItem('tokenc'));
     var albumsArtista = await fetch(`${url_album}?ids=${listaAlbunes}`,opcionesAlbum)
     .then((result2) => result2.json())
     .then((data2) => {setArtistas(data2.albums)}
@@ -116,10 +117,10 @@ export const Inicio = () => {
 
 
   return (
-    <div className={estilos.contenedor}>
+    <div className={dark ? estilos.contenedoro : estilos.contenedorc}>
       <div className={estilos.contenido}>
           <div className={estilos.izquierda}>
-            <img className={estilos.logoimg} onClick={togglePlay} src={Logogc} alt="" />
+            <img className={estilos.logoimg} onClick={togglePlay} src={dark ? Logogo : Logogc} alt="" />
             <h3>Hola amante de la música, esto es MusicBlend</h3>
             <p>Nosotros te presentamos toda la música que te gusta en un solo lugar; revisa tus recomendaciones y empieza a descubrir. Cuanta más música busques, mejores recomendaciones obtendrás.</p>
             <h3>¿QUÉ ESPERAS?</h3>
@@ -178,15 +179,15 @@ export const Inicio = () => {
       <div className={estilos.footer}>
         <div className={estilos.textfooter}>
           <ul className={estilos.menu}>
-            <li>Registrarse</li>
-            <li>API de Desarrollo</li>
-            <li>Sobre Nosotros</li>
+            <Link to="/Login"><li className={estilos.linkfooter}>Contactanos</li></Link>
+            <a href="https://developer.spotify.com/" target="_blank"><li className={estilos.linkfooter}>API de Desarrollo</li></a>
+            <Link to="/Nosotros"><li className={estilos.linkfooter}>Sobre Nosotros</li></Link>
           </ul>
           <div className={estilos.derechos}>
             TeamRTX © 2024 MusicBlend td. Todos los derechos reservados
           </div>
         </div>
-        <img className={estilos.logoimg} src={Logop} alt="" />
+        <img className={estilos.logoimgfooter} src={Logop} alt="" />
       </div>
     </div>
   );

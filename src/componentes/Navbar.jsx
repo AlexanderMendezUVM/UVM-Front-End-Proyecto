@@ -1,30 +1,42 @@
 import estilos from "../css/Navbar.module.css";
 import Logop from "../assets/Logop.png";
-import Dark from "../assets/Dark Mode.png";
-import Iconmenu from "../assets/iconmenu.png";
 import { Link } from "react-router-dom";
-export const Navbar=()=> {
+import { MdDarkMode, MdLightMode, MdMenu, MdClose } from "react-icons/md";
+
+
+export const Navbar=({dark, cambiarmodo, menuo, cambiarmenu})=> {
   return (
-    <header className={estilos.navbar}>
+    <header className={dark ? `${estilos.navbar} ${estilos.navbaro}` : `${estilos.navbar} ${estilos.navbarc}`}>
       <Link to="/">
-        <div className={estilos.logo}>
+        <div onClick={()=>cambiarmenu(false)} className={estilos.logo}>
           <img className={estilos.logoimg} src={Logop} alt="" />
-          <h3 className={estilos.logotext} >MusicBlend</h3>
+          <h3 className={dark ? estilos.logotexto : estilos.logotextc} >MusicBlend</h3>
         </div>
       </Link>
-        <ul className={estilos.menu}>
-        <Link to="/Explorar"><li className={estilos.itemmenu}>Explorar</li></Link>
-        <Link to="/Listas"><li className={estilos.itemmenu}>Listas</li></Link> 
-        <Link to="/TopMusic"><li className={estilos.itemmenu}>Top Artista</li></Link>
-        <Link to="/Nosotros"><li className={estilos.itemmenu}>Sobre Nosotros</li></Link>
+        <ul onClick={()=>cambiarmenu(false)} className={menuo ? estilos.menu : estilos.menusmall}>
+            <Link to="/Explorar"><li className={dark ? `${estilos.itemmenu} ${estilos.itemmenuo}` : `${estilos.itemmenu} ${estilos.itemmenuc}`}>Explorar</li></Link>
+            <Link to="/Listas"><li className={dark ? `${estilos.itemmenu} ${estilos.itemmenuo}` : `${estilos.itemmenu} ${estilos.itemmenuc}`}>Listas</li></Link> 
+            <Link to="/TopMusic"><li className={dark ? `${estilos.itemmenu} ${estilos.itemmenuo}` : `${estilos.itemmenu} ${estilos.itemmenuc}`}>Top Artista</li></Link>
+            <Link to="/Nosotros"><li className={dark ? `${estilos.itemmenu} ${estilos.itemmenuo}` : `${estilos.itemmenu} ${estilos.itemmenuc}`}>Sobre Nosotros</li></Link>
         </ul>
-        <button className={estilos.iconomenu}>
-              <img className={estilos.iconoimg} src={Iconmenu} alt=""/>
+        <button onClick={()=>cambiarmenu(menuo)} className={estilos.botonmenu}>
+          {menuo ?
+            <MdMenu size="2.2em" className={dark ? estilos.modomenuo : estilos.modomenuc}/>
+            :
+            <MdClose size="2.2em" className={dark ? estilos.modomenuo : estilos.modomenuc}/>
+          }
         </button>
         <Link to="/Contacto">
-          <div className={estilos.registro}>Cantactanos</div>
+          <div className={estilos.contacto}>Contactanos</div>
         </Link>
-        <img className={estilos.modoimg} src={Dark} alt="" />
+        <button onClick={()=>cambiarmodo(dark)} className={estilos.botonmodo}>
+          {dark ?
+            <MdLightMode size="2.2em" className={estilos.modoimgc}/>
+            :
+            <MdDarkMode size="2.2em" className={estilos.modoimgo} />
+          }
+        </button>
+
     </header>
   );
 };
