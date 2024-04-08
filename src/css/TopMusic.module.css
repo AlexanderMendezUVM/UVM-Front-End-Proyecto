@@ -1,0 +1,93 @@
+.contenedor{
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    background-color: black;
+    border: 1px solid red;
+}
+
+.busqueda{
+    position: absolute;
+    text-align: center;
+    top: 60px;
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    background-color: #E2E3E5;
+}
+
+.frase{
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.inputbuscar{
+    padding: 5px;
+    width: 25%;
+    text-align: center;
+    border-style: none;
+    border-radius: 15px;
+    color: black;
+    outline: none;
+}
+
+.botonbuscar{
+    margin-left: 20px;
+}
+
+.listado{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 35px;
+    padding: 30px;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #000000;
+    background-color: #E2E3E5;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #D3D5D8;
+    /* box-shadow: 3px 3px 8px rgb(238, 238, 238); */
+    box-shadow: 3px 3px 8px rgb(44, 44, 44);
+}
+
+.tarjeta:hover{
+    transform: rotatey(360deg);
+    transition: all 1.5s ease-in;
+}
+
+.infotarjeta{
+    text-align: left;
+}
+
+
+.infotarjeta{
+    text-align: left;
+}
+
+.imgagen{
+    border-radius: 10px;
+}
+
+.titulo{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+
+.cantante{
+    text-transform:uppercase;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
