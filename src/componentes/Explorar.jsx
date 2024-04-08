@@ -58,7 +58,6 @@ export function Explorar({dark}) {
       var albumsArtista = await fetch(`https://api.spotify.com/v1/artists/${artistaID}/albums?market=ES&limit=25&offset=0`,opcionesAlbum)
         .then((result2) => result2.json())
         .then((data2) => {setAlbums(data2.items);}
-  //      .then((data2) => {console.log("Muestra: ",data2.items);}
       );
   
       setExist(true);
@@ -81,23 +80,18 @@ export function Explorar({dark}) {
       </div>
       {exist && (
         <ul className={dark ? `${estilos.listado} ${estilos.listadoo}` : `${estilos.listado} ${estilos.listadoc}`}>
-          {/* {secondSearch.map((song, i) => ( */}
           {albums.map((song, i) => (
             <li key={i} className={dark ? estilos.tarjetao : estilos.tarjetac}>
               <img
                 className={estilos.imgtarjeta}
                 style={{ width: "186px", height: "186px" }}
-                // src={song.data.albumOfTrack.coverArt.sources[0].url}
                 src={song.images[0].url}
               />
               <div className={estilos.infotarjeta}>
-                {/* <h3 className={estilos.titulo}>{song.data.name}</h3> */}
                 <h3 className={estilos.titulo}>{song.name}</h3>
                 <h4 className={estilos.cantante}>
-                  {/* {song.data.artists.items[0].profile.name} */}
                   {song.release_date.substr(0,4)}
                 </h4>
-                {/* <a href={song.data.uri}>Play</a> */}
                 <a href={song.uri}>Play</a>
                 </div>
             </li>

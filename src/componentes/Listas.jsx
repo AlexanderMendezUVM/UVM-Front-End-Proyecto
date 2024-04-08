@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import estilos from "../css/Listas.module.css";
-import { Link } from "react-router-dom";
 
 //URL para obtener Mis Listas de Reproducción
 const url_myListas = "https://api.spotify.com/v1/me/playlists";
@@ -10,25 +9,6 @@ export function Listas({dark}) {
   const [exist, setExist] = useState(false);
   const [albums, setAlbums] = useState();
 
- /*  function buscar() {
-    var opciones = {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem('token')
-      }
-    };
-    console.log("TOKEN PARA LISTAS: ",localStorage.getItem('token'));
-    fetch(url_myListas,opciones)
-    .then((result2) => result2.json())
-    .then((data2) => {setAlbums(data2.items)});
-    //console.log("DATOS LISTAS: ",albums);
-    if (albums.length>0){
-      setExist(true);
-    }
-    console.log("LISTAS: ",albums);
-  
-}
- */
 
 async function buscar() {
 
@@ -53,7 +33,6 @@ async function buscar() {
 
 useEffect(() => {
   buscar();
-  //setExist(true);
 },[]);
 
 
@@ -66,7 +45,6 @@ useEffect(() => {
             <li key={i} className={dark ? estilos.tarjetao : estilos.tarjetac}>
               <img
                 className={estilos.imgtarjeta}
-                // style={{ width: "80px", height: "80px" }}
                 src={song.images[0].url}
               />
               <div className={estilos.infotarjeta}>

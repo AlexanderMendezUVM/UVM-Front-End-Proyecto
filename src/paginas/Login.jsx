@@ -1,7 +1,7 @@
 import estilos from "../css/Login.module.css";
-const clientID="cce29b73f12f4d66954024732c079412";
-const clientSecret="d84d3fb14ff4486883ba6e95b17ba133";
-const redirectURI = "http://localhost:5173";
+const clientID=import.meta.env.VITE_CLIENTID;
+const clientSecret=import.meta.env.VITE_CLIENTSECRET;
+const redirectURI = import.meta.env.VITE_REDIRECTURI;
 const urlAUTH = "https://accounts.spotify.com/authorize";
 const delimitador = "%20";
 const scopes = [

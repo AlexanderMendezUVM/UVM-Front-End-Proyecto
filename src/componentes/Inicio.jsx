@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 import useSound from 'use-sound';
 import audio from '../assets/track.mp3';
 
-const clientID="cce29b73f12f4d66954024732c079412";
-const clientSecret="d84d3fb14ff4486883ba6e95b17ba133";
+const clientID=import.meta.env.VITE_CLIENTID;
+const clientSecret=import.meta.env.VITE_CLIENTSECRET;
 
 //URL para obtener Token
 const url_token = "https://accounts.spotify.com/api/token";
@@ -105,7 +105,6 @@ export const Inicio = ({dark}) => {
     var albumsArtista = await fetch(`${url_album}?ids=${listaAlbunes}`,opcionesAlbum)
     .then((result2) => result2.json())
     .then((data2) => {setArtistas(data2.albums)}
-    //.then((data2) => {console.log(data2);}
     );
     setExist(true);
   }
@@ -139,7 +138,6 @@ export const Inicio = ({dark}) => {
                   src={song.images[0].url}
                   />
                 </li>
-              // <a href={song.uri}>Play</a>
                 ))}
                 {artistas.map((song, i) => (
                 <li key={i} className={estilos.contenedorimg}>
@@ -148,7 +146,6 @@ export const Inicio = ({dark}) => {
                   src={song.images[0].url}
                   />
                 </li>
-              // <a href={song.uri}>Play</a>
                 ))}
               </ul>
             </div>
@@ -179,7 +176,7 @@ export const Inicio = ({dark}) => {
       <div className={estilos.footer}>
         <div className={estilos.textfooter}>
           <ul className={estilos.menu}>
-            <Link to="/Login"><li className={estilos.linkfooter}>Contactanos</li></Link>
+            <Link to="/Contacto"><li className={estilos.linkfooter}>Contactanos</li></Link>
             <a href="https://developer.spotify.com/" target="_blank"><li className={estilos.linkfooter}>API de Desarrollo</li></a>
             <Link to="/Nosotros"><li className={estilos.linkfooter}>Sobre Nosotros</li></Link>
           </ul>

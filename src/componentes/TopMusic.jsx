@@ -5,8 +5,6 @@ import { useDebounce } from "../utilidades/useDebounce.jsx";
 //URL para obtener el ID de un Artista
 const url_artista = "https://api.spotify.com/v1/search?q=";
 
-//URL para obtener Album del Artista
-const url_album = "https://api.spotify.com/v1/artists";
 
 
 export function TopMusic({dark}) {
