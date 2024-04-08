@@ -1,26 +1,52 @@
-.contenedorform{
-    margin-top: 50px;
+.contenedorformc {
+    position: absolute;
+    top: 61px;
+    padding-top: 10px;
     width: 100vw;
-    display:flex;
+    height: 100vh;
+    display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.formulario {
-    background-color: #f0f1f2;
-    color: #000000;
-    padding: 25px;
+    align-items:start;
+    background-color: #e2e3e5;
+  }
+  
+  .contenedorformo {
+    position: absolute;
+    top: 61px;
+    padding-top: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: #17181a;
+  }
+  
+  .formularioc {
+    background-color: #e2e3e5;
+    color: #17181a;
+    padding: 20px;
     max-width: 360px;
     font-size: 0.8rem;
     border-radius: 10px;
     box-shadow: 3px 3px 8px rgb(44, 44, 44);
   }
   
-  .titulo{
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #01b23e;
+  .formularioo {
+    background-color: #e2e3e5;
+    color: #17181a;
+    padding: 20px;
+    max-width: 360px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgb(155, 153, 153);
+  }
+  
+  .titulo {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #01b23e;
   }
   
   label {
@@ -45,13 +71,13 @@
     border: none;
   }
   
-  textarea{
+  textarea {
     width: 100%;
     margin-bottom: 0.3rem;
     border-radius: 5px;
     font-size: 1rem;
     border-style: none;
-    border: none; 
+    border: none;
     resize: none;
   }
   
@@ -62,26 +88,26 @@
   
   .check {
     position: absolute;
-    top:4px;
+    top: 4px;
     left: 0;
     width: 15px;
     height: 15px;
   }
   
-  .textoterminos{
+  .textoterminos {
     position: absolute;
     height: 25px;
     top: -5px;
     left: 20px;
   }
   
-  .enviar{
+  .enviar {
     display: flex;
     justify-content: center;
     margin-top: 15px;
   }
   
-  button{
+  button {
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 10px;

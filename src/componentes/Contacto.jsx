@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 
-export function Contacto() {
+export function Contacto({dark}) {
   const form = useRef();
   const {
     register,
@@ -40,8 +40,8 @@ export function Contacto() {
 
  
   return (
-    <div className={estilos.contenedorform}>
-    <form className={estilos.formulario} ref={form} onSubmit={onSubmit}>
+    <div className={dark ? estilos.contenedorformo : estilos.contenedorformc}>
+    <form className={dark ? estilos.formularioo : estilos.formularioc} ref={form} onSubmit={onSubmit}>
       <div className={estilos.titulo}>
         <h2>Formulario de Contacto</h2>
       </div>

@@ -1,32 +1,56 @@
 .contenedor{
     width: 100%;
-    display: block;
+    display: flex;
     flex-direction: column;
-    background-color: black;
 }
 
-.frase{
-    font-size: 0.9rem;
-    padding-top: 170px;
-    color:red;
-}
 
-.listado{
+.contenedorc {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background-color: #e2e3e5;
+  }
+  
+  .contenedoro {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #17181a;
+  }
+  
+
+ 
+.listadoc{
     position: absolute;
-    top: 30px;
+    top: 61px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 680px);
+    grid-template-columns: repeat(auto-fill, 80%);
     gap: 20px;
-    padding: 60px;
+    padding: 40px;
     justify-content: center;
     margin-top: 0;
     margin-bottom: 0;
-    color: #000000;
     background-color: #E2E3E5;
 }
 
-.tarjeta{
+.listadoo{
+    position: absolute;
+    top: 61px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80%);
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #17181A;
+}
+
+.tarjetac{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -34,11 +58,27 @@
     padding: 10px 10px;
     border-radius: 10px;
     background: #D3D5D8;
-    /* box-shadow: 3px 3px 8px rgb(238, 238, 238); */
     box-shadow: 3px 3px 8px rgb(44, 44, 44);
 }
 
-.tarjeta:hover{
+.tarjetac:hover{
+    scale: 1.02;
+    transition: all 0.5s ease-in-out;
+}
+
+.tarjetao{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #D3D5D8;
+    box-shadow: 3px 3px 8px rgb(156, 156, 156); 
+}
+
+
+.tarjetao:hover{
     scale: 1.02;
     transition: all 0.5s ease-in-out;
 }
@@ -53,8 +93,10 @@
 }
 
 
-.imgagen{
+.imgtarjeta{
     border-radius: 10px;
+    width: 70px;
+    height: 70px;
 }
 
 .nombre{
@@ -73,3 +115,44 @@
     line-height: 60px;
     color:white;
 }
+ 
+.alertac{
+    background-color: #e2e3e5;
+    color:#01B23E;
+    font-size: 1.5rem;
+    width: 100vw;
+    text-align: center;   
+}
+
+.alertao{
+    background-color: #e2e3e5;
+    color:#17181A;
+    font-size: 1.5rem;
+    width: 100vw;
+    text-align: center;
+}
+ 
+@media (max-width: 680px) {
+    .listadoo{
+        grid-template-columns: repeat(auto-fill, 100%);     
+    }
+
+    .imgtarjeta{
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nombre{
+        font-size: 0.7rem;
+    }
+    
+    .play{
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+        line-height: 40px;
+        font-size: 0.7rem;
+    }
+}    
+   

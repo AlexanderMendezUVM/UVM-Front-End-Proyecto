@@ -1,17 +1,33 @@
-.logincontenedor{
+.logincontenedorc{
+    position: absolute;
     width: 100vw;
-    height: 400px;
+    height: 100vh;
+    left: 0;
+    top:61px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #E2E3E5;
+}
+
+.logincontenedoro{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top:61px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #17181A;
 }
 
 .acceso{
-    color: black;
+    color: 17181A;
     font-size: 3rem;
 }
 
-.login{
+.loginc{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,17 +35,43 @@
     width: 500px;
     height: 300px;
     gap: 40px;
-    background-color: E2E3E5;
+    background-color: #01B23E;
+    color: #E2E3E5;
+    border-radius: 20px;
+    border: 2px solid #17181A;
+}
+
+.logino{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    gap: 40px;
+    background-color: #17181A;
     color: #01B23E;
     border-radius: 20px;
     border: 2px solid;
 }
 
-.boton{
+
+.botonc{
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: #17181A;
+    color:#E2E3E5;
+    border: 0;
+    border-style: none;
+}
+
+.botono{
     font-size: 1.3rem;
     padding: 10px 30px;
     border-radius: 20px;
     background-color: #01B23E;
+    color:#17181A;
     border: 0;
     border-style: none;
 }

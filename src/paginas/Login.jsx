@@ -12,7 +12,7 @@ const scopes = [
 ];
 const scopeParams =scopes.join(delimitador);
 
-export const Login = () => {
+export const Login = ({dark}) => {
   
   const inicio = (()=>{
     window.location=`${urlAUTH}?client_id=${clientID}&client_secret=${clientSecret}&redirect_uri=${redirectURI}&scope=${scopeParams}&response_type=token&shows?offset=0&limit=20`;
@@ -24,10 +24,10 @@ export const Login = () => {
   }
 
   return (
-    <div className={estilos.logincontenedor}>
-     <div className={estilos.login}>
+    <div className={dark ? estilos.logincontenedoro : estilos.logincontenedorc}>
+     <div className={dark ? estilos.logino : estilos.loginc}>
         <h1 className={estilos.acceso}>Acceso a Spotify</h1>
-            <button className={estilos.boton} onClick={inicio}>Login</button>
+            <button className={dark ? estilos.botono : estilos.botonc} onClick={inicio}>Login</button>
       </div>
     </div>
   )

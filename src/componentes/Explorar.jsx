@@ -8,7 +8,7 @@ const url_artista = "https://api.spotify.com/v1/search?q=";
 const url_album = "https://api.spotify.com/v1/artists";
 
 
-export function Explorar() {
+export function Explorar({dark}) {
   const [exist, setExist] = useState(false);
   const [albums, setAlbums] = useState();
 
@@ -46,7 +46,6 @@ export function Explorar() {
     );
     
     if (artistaID){
-      console.log("Artista ID: " + artistaID);
       var opcionesAlbum = {
         method: "GET",
         headers: {
@@ -64,13 +63,11 @@ export function Explorar() {
   
       setExist(true);
     } 
-
-
   }
   //****************************************************** */
   return (
-    <div className={estilos.contenedor}>
-      <div className={estilos.busqueda}>
+    <div className={dark ? estilos.contenedoro : estilos.contenedorc}>
+      <div className={dark ? estilos.busquedao : estilos.busquedac}>
         <h2 className={estilos.frase}>
           ENCUENTRA TODA ESA MÚSICA QUE ALEGRA TUS DÍAS
         </h2>
@@ -83,10 +80,10 @@ export function Explorar() {
           />
       </div>
       {exist && (
-        <ul className={estilos.listado}>
+        <ul className={dark ? `${estilos.listado} ${estilos.listadoo}` : `${estilos.listado} ${estilos.listadoc}`}>
           {/* {secondSearch.map((song, i) => ( */}
           {albums.map((song, i) => (
-            <li key={i} className={estilos.tarjeta}>
+            <li key={i} className={dark ? estilos.tarjetao : estilos.tarjetac}>
               <img
                 className={estilos.imgtarjeta}
                 style={{ width: "186px", height: "186px" }}

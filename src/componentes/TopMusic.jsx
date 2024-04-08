@@ -9,7 +9,7 @@ const url_artista = "https://api.spotify.com/v1/search?q=";
 const url_album = "https://api.spotify.com/v1/artists";
 
 
-export function TopMusic() {
+export function TopMusic({dark}) {
   const [exist, setExist] = useState(false);
   const [albums, setAlbums] = useState([]);
 
@@ -62,18 +62,14 @@ export function TopMusic() {
       var albumsArtista = await fetch(`https://api.spotify.com/v1/artists/${artistaID}/top-tracks?market=ES&limit=25&offset=0`,opcionesTop)
         .then((result2) => result2.json())
         .then((data2) => {setAlbums(data2.tracks);}
-   //     .then((data2) => {console.log("Muestra: ",data2.tracks);}
       );
-  
       setExist(true);
     } 
-
-
   }
   //****************************************************** */
   return (
-    <div className={estilos.contenedor}>
-      <div className={estilos.busqueda}>
+    <div className={dark ? estilos.contenedoro : estilos.contenedorc}>
+      <div className={dark ? estilos.busquedao : estilos.busquedac}>
         <h2 className={estilos.frase}>
           ENCUENTRA EL TOP DE CANCIONES DE TU ARTISTA FAVORITO
         </h2>
@@ -86,24 +82,18 @@ export function TopMusic() {
           />
       </div>
       {exist && (
-        <ul className={estilos.listado}>
-          {/* {secondSearch.map((song, i) => ( */}
+        <ul className={dark ? estilos.listadoo : estilos.listadoc}>
           {albums.map((song, i) => (
-            <li key={i} className={estilos.tarjeta}>
+            <li key={i} className={dark ? estilos.tarjetao : estilos.tarjetac}>
               <img
                 className={estilos.imgtarjeta}
                 style={{ width: "186px", height: "186px" }}
-                // src={song.data.albumOfTrack.coverArt.sources[0].url}
                 src={song.album.images[0].url}
               />
               <div className={estilos.infotarjeta}>
-                {/* <h3 className={estilos.titulo}>{song.data.name}</h3> */}
                 <h3 className={estilos.titulo}>{song.name}</h3>
                 <h4 className={estilos.cantante}>
-                  {/* {song.data.artists.items[0].profile.name} */}
-                  {/* {song.release_date.substr(0,4)} */}
                 </h4>
-                {/* <a href={song.data.uri}>Play</a> */}
                 <a href={song.uri}>Play</a>
                 </div>
             </li>
